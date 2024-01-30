@@ -53,6 +53,11 @@
     --tw-backdrop-saturate: ;
     --tw-backdrop-sepia: ;
 }
+
+.contain {
+    padding: 0;
+    width: 100%;
+}
 .nav-pad {
     padding: 10px 4% !important
 }
@@ -155,8 +160,8 @@
 }
 
 .col5 {
-    width: 18%;
-    margin: 1%;
+    width: 20%;
+    /* margin: 1%; */
 }
 
 .card {
@@ -166,4 +171,44 @@
 }
 .card-link {
     color: #000;
+}
+
+.v-center {
+    display: grid;
+    align-items: center;
+    align-content: center;
+}
+.card2 {
+    text-decoration: none;
+    color: #000;
+    margin: 20px 0;
+    padding: 24px 32px 24px 24px;
+    border-radius: 12px;
+    max-width: 664px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 32px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 16px;
+    background-color: rgb(255, 255, 255);
+    transition: box-shadow 400ms ease-out 0s, transform 400ms ease-out 0s;
+}
+
+.card2:hover {
+    text-decoration: none;
+    color: #111;
+} 
+.create-bg {
+    background-image: url(../images/slider2.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.list-card {
+
 }
