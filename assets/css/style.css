@@ -162,19 +162,23 @@
 }
 
 .col2 {
-    width: 49% !important;
+    width: 48% !important;
+    margin: 1%;
 }
 
 .col4 {
-    width: 24% !important;
+    width: 23% !important;
+    margin: 1%;
 }
 
 .col5 {
-    width: 19% !important;
+    width: 18% !important;
+    margin: 1%;
 }
 
 .col6 {
-    width: 16% !important;
+    width: 15% !important;
+    margin: 0.75%;
 }
 
 .card {
@@ -252,3 +256,31 @@
 .collection-revert {
     
 } */
+
+#dragdrop {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    z-index: 1;
+    border: 1px dashed rgba(18, 18, 18, 0.32);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out 0s, border-color 0.25s ease-in-out 0s;
+    overflow: hidden;
+}
+.dragdrop section {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.collection-select {
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.25s ease-in-out 0s;
+    border: 1px solid rgba(18, 18, 18, 0.12);
+}
