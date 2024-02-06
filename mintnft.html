@@ -32,23 +32,153 @@
                 <div class="col-lg-5">
                     <h3 class="font-weight-bold">Create an NFT</h3>
                     <p>Once your item is minted you will not be able to change any of its information.</p>
-                    <div class="dragdrop" id="dragdrop">
-                        <input id="media" name="media" type="file" tabindex="-1" style="display: none;">
-                        <section>
-                            <p class="mb-1">Drag and drop media</p>
-                            <p class="mb-1">Browse files</p>
-                            <p class="mb-1">Max size: 50MB</p>
-                            <p class="mb-1">JPG, PNG, GIF, SVG, MP4</p>
-                        </section>
+                    <div>
+                        <button class="remove-img-btn" id="remove-btn" onclick="removeImg()">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        <div class="dragdrop justify-content-center mainbox" id="dragdrop">
+                            <section class="text-center" id="text-section">
+                            <input id="media" name="media" type="file" tabindex="-1" style="display: none;"
+                                accept="image/*">
+                                <i class="fa fa-upload mb-3" style="font-size: 26px;"></i>
+                                <p class="mb-0" style="font-size: 16px;font-weight: 600;">Drag and drop media</p>
+                                <p class="mb-0" style="font-size: 14px;font-weight: 600;color: #007aff;">Browse files</p>
+                                <p class="mb-0" style="font-size: 14px;">Max size: 50MB</p>
+                                <p class="mb-0" style="font-size: 14px;">JPG, PNG, GIF, SVG, MP4</p>
+                            </section>
+                        </div>
+
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="collection-select">
-                        <h5>Choose a collection</h5>
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-5">
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">Collection *</h6>
+                        <a href="#" class="nones">
+                            <div class="collection-box">
+                                <div class="row px-2">
+                                    <div class="col-lg-2 ">
+                                        <div class="box1 justify-content-center">
+                                            <i class="fa fa-server"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9" style="display: flex;align-items: center;">
+                                        <h5>Choose a collection</h5>
+                                    </div>
+                                    <div class="col-lg-1" style="display: flex;align-items: center;">
+                                        <i class="fa fa-chevron-down text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">Name *</h6>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">Supply *</h6>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">Description *</h6>
+                        <textarea type="text" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">External Link</h6>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <h6 class="font-weight-bold">Traits</h6>
+                        <p>Traits describe attributes of your item. They appear as filters inside your collection page
+                            and are also listed out inside your item page.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+
+        function removeImg() {
+            const textSection = document.getElementById("text-section");
+            const previewContainer = document.getElementById("dragdrop");
+            const removeBtn = document.getElementById("remove-btn");
+            textSection.style.display = "";
+            removeBtn.style.display = "none";
+            previewContainer.style.backgroundImage = "url()";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const dropArea = document.getElementById("dragdrop");
+            const fileInput = document.getElementById("media");
+            const previewContainer = document.getElementById("dragdrop");
+            const textSection = document.getElementById("text-section");
+            const removeBtn = document.getElementById("remove-btn");
+
+            dropArea.addEventListener("click", () => {
+                fileInput.click();
+            });
+            // Prevent default drag behaviors
+            ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+                dropArea.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+
+            // Highlight drop area when a file is dragged over it
+            ["dragenter", "dragover"].forEach((eventName) => {
+                dropArea.addEventListener(eventName, () => {
+                    dropArea.classList.add("highlight");
+                });
+            });
+
+            ["dragleave", "drop"].forEach((eventName) => {
+                dropArea.addEventListener(eventName, () => {
+                    dropArea.classList.remove("highlight");
+                });
+            });
+
+            // Handle dropped files
+            dropArea.addEventListener("drop", (e) => {
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+
+            // Handle file input change
+            fileInput.addEventListener("change", (e) => {
+                const files = e.target.files;
+                handleFiles(files);
+            });
+
+            function handleFiles(files) {
+                if (!files || files.length === 0) return;
+
+                [...files].forEach((file) => {
+                    if (file.type.startsWith("image/")) {
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            const img = new Image();
+                            // img.src = reader.result;
+                            // img.classList.add("img-preview");
+                            // previewContainer.appendChild(img);
+                            previewContainer.style.backgroundImage = "url("+reader.result+")";
+                            previewContainer.style.backgroundSize = "cover"
+
+                            textSection.style.display = "none";
+                            removeBtn.style.display="block"
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        console.log(`${file.name} is not a valid image file.`);
+                    }
+                });
+            }
+        });
+
+    </script>
 </body>
+
 </html>
