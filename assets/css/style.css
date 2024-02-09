@@ -438,3 +438,29 @@
     font-size: 32px;
     font-weight: 700;
 }
+
+.a-text {
+    text-decoration: none;
+}
+.a-text:hover {
+    text-decoration: none;
+}
+
+.border-card {
+    border-radius: 10px;
+    border: 1px solid rgba(18, 18, 18, 0.12);
+    background: rgb(253, 253, 253);
+}
+.lhpBED {
+    border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+    font-weight: initial;
+    padding: 20px;
+}
+
+.btns {
+    border-radius: 0.75rem !important;
+    padding: 10px 20px 10px 20px !important;
+}
+.card-header {
+    background: transparent !important;
+}

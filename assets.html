@@ -32,7 +32,8 @@
                     <section>
                         <header class="flex font-medium">
                             <div class="mr-auto item-summary-header-icon">
-                                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ethereum-eth-icon.png" />
+                                <img
+                                    src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ethereum-eth-icon.png" />
                             </div>
                             <div class="navbar-text ml-auto">
                                 <i class="px-2 fa fa-share"></i>
@@ -41,15 +42,189 @@
                         </header>
 
                         <div class="item-summary-img">
-                            <img
-                                src="https://i.seadn.io/gcs/files/52ce406c7c1392fa1069ce97e0e6ef5a.png?auto=format&dpr=1&w=1000" />
+                            <img src="https://i.seadn.io/gcs/files/52ce406c7c1392fa1069ce97e0e6ef5a.png?auto=format&dpr=1&w=1000" />
                         </div>
+
+                        
                     </section>
+                    <div class="border-card mb-4 mt-4">
+                        <div class="card-header">
+                            <h5> <i class="fa fa-text-align"></i> Description</h5>
+                        </div>
+                        <div class="card-body">
+                            <p> By MutantApeYachtClub</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7 item-main"></div>
+            <div class="col-lg-7 item-main">
+                <p class="mb-3"><a class="a-text" href="/">TheMonaLana</a></p>
+                <h3 class="font-weight-bold">Monkey Ape #3</h3>
+                <p>Owned by <span><a class="a-text" href="/">kartikswarnkar</a></span> </p>
+
+                <div class="mt-5 mb-4">
+                    <p>2.9K views | 107 favorites</p>
+                </div>
+                <div class="border-card mb-4">
+                    <div class="card-header transparent">
+                        <p>Sale ends 11 February 2024 at 7:55 am </p>
+                        <div class="row ">
+                            <div class="col-lg-6 m-0 p-0">
+                                <div class="flex">
+                                    <div class="col-3">
+                                        <h3>01</h3>
+                                        <p>Days</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <h3>13</h3>
+                                        <p>Hours</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <h3>17</h3>
+                                        <p>Minutes</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <h3>45</h3>
+                                        <p>Seconds</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-2">Current price</p>
+                        <h2 class="font-weight-bold">4.48 ETH <span class="h6 text-muted">$11,244.08</span> </h2>
+
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <button class="btn btns btn-block btn-primary">Buy Now</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btns btn-block btn-secondary">Make an offer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-card">
+                    <div class="card-header">
+                        <h5>Listings</h5>
+                    </div>
+                    <div class="card-body p-0 m-0">
+                        <table class="table">
+                            <tr class="text-muted">
+                                <td>Price</td>
+                                <td>USD Price</td>
+                                <td>Quantity</td>
+                                <td>Expiration</td>
+                                <td>From</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="h5 font-weight-bold">4.48 ETH</td>
+                                <td>$11,244.08</td>
+                                <td>1</td>
+                                <td>in 2 days</td>
+                                <td>WeZPeople</td>
+                                <td> <button class="btn btn-sm btn-primary">Buy</button> </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 font-weight-bold">4.48 ETH</td>
+                                <td>$11,244.08</td>
+                                <td>1</td>
+                                <td>in 2 days</td>
+                                <td>WeZPeople</td>
+                                <td> <button class="btn btn-sm btn-primary">Buy</button> </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 font-weight-bold">4.48 ETH</td>
+                                <td>$11,244.08</td>
+                                <td>1</td>
+                                <td>in 2 days</td>
+                                <td>WeZPeople</td>
+                                <td> <button class="btn btn-sm btn-primary">Buy</button> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="col-lg-12 mt-4">
+            <div class="border-card">
+                <div class="card-header">
+                    <h4 class="font-weight-bold" style="color: #000;">More from this collection</h4>
+                </div>
+                <div class="card-body">
+                    <div class="">
+                        <div class="flex" id="nft-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const arrays = [
+                {
+                    image : "https://i.seadn.io/s/raw/files/64ee553ce158e9d378b22960b7b14cf8.jpg?auto=format&dpr=1&w=384",
+                    name : "Cartoon Cat 5",
+                    nft : "Jerry NFT",
+                    price : "0.007",
+                    currency : "ETH"
+                },
+                {
+                    image : "https://i.seadn.io/s/raw/files/e3eeae48aef68746d7a4f6eb736c5974.png?auto=format&dpr=1&w=1920",
+                    name : "Cartoon Cat 6",
+                    nft : "Jerry NFT",
+                    price : "",
+                    currency : "ETH"
+                },
+                {
+                    image : "https://i.seadn.io/s/raw/files/76055a92a50aad445237b59a610c6f43.png?auto=format&dpr=1&w=384",
+                    name : "Cartoon Cat 7",
+                    nft : "Jerry NFT",
+                    price : "",
+                    currency : "ETH"
+                },
+                {
+                    image : "https://i.seadn.io/s/raw/files/76055a92a50aad445237b59a610c6f43.png?auto=format&dpr=1&w=384",
+                    name : "Cartoon Cat 7",
+                    nft : "Jerry NFT",
+                    price : "",
+                    currency : "ETH"
+                }
+            ]
+    
+            arrays.map((result) => {
+                const nftList = document.getElementById("nft-list")
+                const imageLink = document.createElement("a")
+                const span = document.createElement("span")
+                imageLink.classList.add("col4");
+                imageLink.classList.add("card");
+                imageLink.classList.add("mb-4");
+                imageLink.href = "/assets.html"
+                span.classList.add("p-3");
+    
+                const h6 = document.createElement("h6")
+                const h61 = document.createElement("h61")
+                const h5 = document.createElement("h5")
+                const img = document.createElement("img")
+                h5.classList.add("mt-3");
+                h5.classList.add("font-weight-bold");
+    
+                img.src = result.image
+                h6.innerHTML = result.name
+                h61.innerHTML = result.nft
+                h5.innerHTML = result.price ? result.price + " " + result.currency : ""
+    
+                imageLink.append(img)
+                span.append(h6)
+                span.append(h61)
+                span.append(h5)
+                imageLink.append(span)
+    
+                nftList.append(imageLink)
+            })
+        </script>
 </body>
 
 </html>
