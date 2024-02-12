@@ -464,3 +464,16 @@
 .card-header {
     background: transparent !important;
 }
+
+.bg-muted {
+    background: rgba(18,18,18,0.04);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-header {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+}
